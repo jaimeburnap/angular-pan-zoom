@@ -543,7 +543,7 @@ function ($document, PanZoomService) {
                             }
                             
                             $scope.model.isPanning = true;
-                            
+                            $scope.$emit('panzoom.panning.start');
 
                             // set these for the animation slow down once drag stops
                             $scope.panVelocity = {
@@ -573,6 +573,7 @@ function ($document, PanZoomService) {
 
                             $scope.dragging = false;
                             $scope.model.isPanning = false;
+			    $scope.$emit('panzoom.padding.stop');
                             
                             wakeupAnimationTick();
 
