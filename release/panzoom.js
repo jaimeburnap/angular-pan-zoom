@@ -573,7 +573,7 @@ function ($document, PanZoomService) {
 
                             $scope.dragging = false;
                             $scope.model.isPanning = false;
-			    $scope.$emit('panzoom.padding.stop');
+			    $scope.$emit('panzoom.panning.stop');
                             
                             wakeupAnimationTick();
 
