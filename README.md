@@ -3,7 +3,7 @@
 angular-pan-zoom
 ================
 
-AngularJS directive for implementing pan and zoom on any DOM element
+AngularJS directive for implementing pan and zoom on any DOM element. My fork adds broadcasts to the events.
 
 [![Build Status](https://travis-ci.org/mvindahl/angular-pan-zoom.svg?branch=master)](https://travis-ci.org/mvindahl/angular-pan-zoom)
 
