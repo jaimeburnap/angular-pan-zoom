@@ -1,5 +1,5 @@
 /*!
- AngularJS pan/zoom v1.0.14
+ AngularJS pan/zoom v{VERSION}
  @license: MIT
  Github: https://github.com/mvindahl/angular-pan-zoom
 */
@@ -543,7 +543,7 @@ function ($document, PanZoomService) {
                             }
                             
                             $scope.model.isPanning = true;
-                            
+                            $scope.$emit('panzoom.panning.start');
 
                             // set these for the animation slow down once drag stops
                             $scope.panVelocity = {
@@ -573,6 +573,7 @@ function ($document, PanZoomService) {
 
                             $scope.dragging = false;
                             $scope.model.isPanning = false;
+			    $scope.$emit('panzoom.padding.stop');
                             
                             wakeupAnimationTick();
 
@@ -651,6 +652,7 @@ function ($document, PanZoomService) {
                 replace: true
             };
     }]);
+
 angular.module('panzoomwidget', [])
 .directive('panzoomwidget', ['$document', 'PanZoomService',
 function ($document, PanZoomService) {
@@ -765,6 +767,7 @@ function ($document, PanZoomService) {
     replace: true
   };
 }]);
+
 angular.module('panzoom').factory('PanZoomService', ['$q',
     function ($q) {
         // key -> deferred with promise of API
